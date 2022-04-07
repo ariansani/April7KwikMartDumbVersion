@@ -47,7 +47,9 @@ public class MartController {
         Date convertedDate = new Date();
         martSvc.insertOrder(skus, name, convertedDate);
 
+        List<SKU> skuList = martSvc.getAllSKU();
 
+        model.addAttribute("allSkus", skuList);
         return "index";
 
     }
